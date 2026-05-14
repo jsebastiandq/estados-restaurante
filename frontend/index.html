@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Pedidos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Gestión de Pedidos</h1>
+      <p class="descripcion">
+        Panel básico para crear, consultar, editar y eliminar pedidos usando una
+        API con Node.js y Express.
+      </p>
+
+      <section class="card">
+        <h2>Crear pedido</h2>
+
+        <form id="formPedido">
+          <div class="form-group">
+            <label for="cliente">Nombre del cliente</label>
+            <input
+              type="text"
+              id="cliente"
+              placeholder="Ej: Juan Pérez"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="productos">Productos</label>
+            <input
+              type="text"
+              id="productos"
+              placeholder="Ej: Pizza, Gaseosa, Pasta"
+              required
+            />
+            <small>Escribe los productos separados por coma.</small>
+          </div>
+
+          <button type="submit">Crear pedido</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Filtrar pedidos</h2>
+
+        <select id="filtroEstado">
+          <option value="todos">Todos</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="en preparación">En preparación</option>
+          <option value="en camino">En camino</option>
+          <option value="entregado">Entregado</option>
+        </select>
+      </section>
+
+      <section class="card">
+        <h2>Listado de pedidos</h2>
+        <div id="listaPedidos" class="lista-pedidos"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
